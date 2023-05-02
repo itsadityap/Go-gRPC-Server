@@ -6,7 +6,7 @@ import (
 	"log"
 	"time"
 
-	pb "github.com/itsadiyap/Go-GRPC-Server/proto"
+	pb "github.com/itsadityap/Go-GRPC-Server/proto"
 )
 
 func callSayHelloBidirectionalStream(client pb.GreetServiceClient, names *pb.NamesList) {

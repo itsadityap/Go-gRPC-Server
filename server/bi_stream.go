@@ -4,7 +4,7 @@ import (
 	"io"
 	"log"
 
-	pb "github.com/itsadiyap/Go-GRPC-Server/proto"
+	pb "github.com/itsadityap/Go-GRPC-Server/proto"
 )
 
 func (s *helloServer) SayHelloBidirectionalStreaming(stream pb.GreetService_SayHelloBidirectionalStreamingServer) error {
