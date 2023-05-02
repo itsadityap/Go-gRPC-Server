@@ -8,27 +8,29 @@ import (
 	"google.golang.org/grpc"
 )
 
-type server struct{
+//define the port
+const (
+	port = ":8080"
+)
+
+//this is the struct to be created, pb is imported upstairs
+type helloServer struct {
 	pb.GreetServiceServer
 }
 
-const (
-	port = "8080"
-)
-
 func main() {
-	lis, err := net.Listen("tcp", ":"+port)
-
+	//listen on the port
+	lis, err := net.Listen("tcp", port)
 	if err != nil {
-		log.Fatalf("failed to start the server: %v", err)
+		log.Fatalf("Failed to start server %v", err)
 	}
-
+	// create a new gRPC server
 	grpcServer := grpc.NewServer()
-	pb.RegisterGreetServiceServer(grpcServer, &server{})
-	log.Printf("Server listening on port %v", port)
-
+	// register the greet service
+	pb.RegisterGreetServiceServer(grpcServer, &helloServer{})
+	log.Printf("Server started at %v", lis.Addr())
+	//list is the port, the grpc server needs to start there
 	if err := grpcServer.Serve(lis); err != nil {
-		log.Fatalf("Failed to serve: %v", err)
+		log.Fatalf("Failed to start: %v", err)
 	}
-
 }
