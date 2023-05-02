@@ -5,7 +5,7 @@ import (
 	"io"
 	"log"
 
-	pb "github.com/itsadiyap/Go-GRPC-Server/proto"
+	pb "github.com/itsadityap/Go-GRPC-Server/proto"
 )
 
 func callSayHelloServerStream(client pb.GreetServiceClient, names *pb.NamesList) {

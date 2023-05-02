@@ -1,4 +1,4 @@
-module github.com/itsadiyap/Go-GRPC-Server
+module github.com/itsadityap/Go-GRPC-Server
 
 go 1.20
 
