@@ -11,7 +11,7 @@ import (
 
 func callSayHelloBidirectionalStream(client pb.GreetServiceClient, names *pb.NamesList) {
 	log.Printf("Bidirectional Streaming started")
-	stream, err := client.SayHelloBidirectionalStreaming(context.Background())
+	stream, err := client.SayHelloBiDiStreaming(context.Background())
 	if err != nil {
 		log.Fatalf("Could not send names: %v", err)
 	}
