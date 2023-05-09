@@ -16,7 +16,7 @@ service GreetService {
     // client streaming RPC
     rpc SayHelloClientStreaming(stream HelloRequest) returns (MessagesList);
     // bidirectional streaming RPC
-    rpc SayHelloBidirectionalStreaming(stream HelloRequest) returns (stream HelloResponse);
+    rpc SayHelloBiDiStreaming(stream HelloRequest) returns (stream HelloResponse);
 }
 
 // when you are not passing any params still you will need to add a type
