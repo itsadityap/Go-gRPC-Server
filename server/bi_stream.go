@@ -16,7 +16,7 @@ func (s *helloServer) SayHelloBiDiStreaming(stream pb.GreetService_SayHelloBiDiS
 		if err != nil {
 			return err
 		}
-		log.Printf("Got request with name : %v", req.Name)
+		log.Printf("Bi stream Got request with name : %v", req.Name)
 		res := &pb.HelloResponse{
 			Message: "Hello " + req.Name,
 		}
